@@ -40,6 +40,12 @@ then
 	then
 		raspbian_buster=1
 	fi
+	# manage bookworm release, no other way to know OS version 
+	# see https://github.com/billw2/rpi-clone/pull/152
+	if ((raspbian)) && [[ "$pretty" == *"bookworm"* ]]
+	then
+		raspbian_buster=1
+	fi
 fi
 
 confirm()
